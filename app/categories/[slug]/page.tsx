@@ -1,11 +1,6 @@
-import { getDocuments } from 'outstatic/server'
+import { getData } from '@/app/apiService'
 
 export default async function Index() {
-  const posts = await getData()
-  return posts.map((post) => <h1 key={post.slug}>{post.title}</h1>)
-}
-
-async function getData() {
-  const posts = getDocuments('TechStack', ['title'])
-  return posts
+  const categories = await getData('TechStack')
+  return categories.map((category) => <h1 key={category.publishedAt}>{category.title}</h1>)
 }
