@@ -19,7 +19,7 @@
 
 body {
   color: var(--text-color);
-  background: radial-gradient(at top left, var(--grad-color-start) 0%, var(--grad-color-end) 50%);
+  background: radial-gradient(at top left, var(--grad-color-start) 0%, var(--grad-color-end) 75%);
 }
 
 @layer utilities {
