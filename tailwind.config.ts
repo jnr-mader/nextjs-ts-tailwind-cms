@@ -14,9 +14,18 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       transitionProperty: {
-        'height': 'height',
-      }
-    },
+        "height": "height",
+      },
+      keyframes: {
+        shake: {
+          "0%, 100%": { transform: "rotate(5deg)" },
+          "50%": { transform: "rotate(-5deg)" },
+        },
+      },
+      animation: {
+        shake: "shake 1s infinite",
+      },
+    }
   },
   plugins: [],
 };
