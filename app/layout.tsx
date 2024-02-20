@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
 
-const quicksand = Quicksand({ weights: [400, 500, 600, 700], subsets: ["latin"]});
+const quicksand = Quicksand({ weight: ["400", "500", "600", "700"], subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Create Next App",
