@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={quicksand.className}>{children}</body>
+      <body className={`${quicksand.className} animate-rollingGradient`}>{children}</body>
     </html>
   );
 }

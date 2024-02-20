@@ -21,9 +21,15 @@ const config: Config = {
           "0%, 100%": { transform: "rotate(5deg)" },
           "50%": { transform: "rotate(-5deg)" },
         },
+        rollingGradient : {
+          "0%": {backgroundPosition:"0% 2%"},
+          "50%": {backgroundPosition:"100% 99%"},
+          "100%": {backgroundPosition:"0% 2%"}
+        }
       },
       animation: {
         shake: "shake 1s infinite",
+        rollingGradient: "rollingGradient 10s infinite",
       },
     }
   },
