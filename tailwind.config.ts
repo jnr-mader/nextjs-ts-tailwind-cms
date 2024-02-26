@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        defFontColor: 'var(--def-font-color)',    
+        defTabsColor: 'var(--def-tabs-color)',
+        defBackgroundColor: 'var(--def-background-color)',
+        defLogoBackgroundColor: 'var(--def-logo-background-color)',
+        gradColorStart: 'var(--grad-color-start)',
+        gradColorEnd: 'var(--grad-color-end)'
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

@@ -26,11 +26,11 @@ export default function NavLogo() {
 
   return (
     <div id="logo" className={`group relative mt-24 mx-auto flex justify-between 
-        ${scrollPosition == "" ? 'flex-col w-[12.5rem] h-auto items-center ' : 'sticky top-2 flex-row w-auto h-[90px] items-start'}`}>
+        ${scrollPosition == "" ? 'flex-col w-[12.5rem] h-[290px] items-center ' : 'sticky top-2 flex-row w-auto h-[90px] items-start'}`}>
         <Image 
             src={jnrLogo}
             alt="Jnr"
-            className={`border-[0.375rem] border-orange-600 rounded-full bg-[var(--background-color)] z-10
+            className={`border-[0.375rem] border-orange-600 rounded-full bg-defLogoBackgroundColor z-10
             ${scrollPosition == "" ? 'absolute' : 'relative mt-1 w-20 border-2'}`}
             priority
         />

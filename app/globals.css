@@ -2,28 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./themes/dark.css";
+@import "./themes/light.css";
+
 :root {
-  --text-color: #000;
-  --tabs-color: #FFE7D4;
-  --background-color: #EDAF94;
+  --def-font-color: #000;
+  --def-tabs-color: #FFE7D4;
+  --def-background-color: #EDAF94;
+  --def-logo-background-color: #EDAF94;
   --grad-color-start: #FFE7D4;
   --grad-color-end: #ea580c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-color: #64BAAA;
-    --background-color: #333;
+    --def-font-color: #ccc;
+    --def-tabs-color: #FFE7D4;
+    --def-background-color: #333;
+    --def-logo-background-color: #EDAF94;
+    --grad-color-start: hsl(26deg 100% 30%);
+    --grad-color-end: hsl(20deg 20% 55%);
   }
 }
 
 body {
-  color: var(--text-color);
-  /* background: radial-gradient(at top left, var(--grad-color-start) 0%, var(--grad-color-end) 75%); */
-  /* background: linear-gradient(314deg, #edaf94, #ea580c); */
-  /* animation: rollingGradient 1s linear infinite;   */
-  background: linear-gradient(314deg, #edaf94, #fb923c);
-  background-size: 400% 400%;
+  background-size: 400% 400%;  
 }
 
 @layer utilities {

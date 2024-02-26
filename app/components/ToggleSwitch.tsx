@@ -5,12 +5,12 @@ import Image from 'next/image';
 import lightIcon from "@/public/images/light-icon.svg"; 
 import darkIcon from "@/public/images/dark-icon.svg"; 
 
-export default function ToggleSwitch() {
-  const [isChecked, setIsChecked] = useState(false)
+export default function ToggleSwitch({isChecked, handleCheckboxChange}) {
+  // const [isChecked, setIsChecked] = useState(false)
 
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked)
-  }
+  // const handleCheckboxChange = () => {
+  //   setIsChecked(!isChecked)
+  // }
 
   return (
     <div className='flex sticky justify-end w-full top-[calc(100vh-3rem)]'>
@@ -23,7 +23,7 @@ export default function ToggleSwitch() {
         />
         <span
           className={`flex items-center space-x-[6px] rounded py-1 px-1 text-sm font-medium gap-1 ${
-            !isChecked ? 'text-primary bg-[--background-color]' : 'bg-orange-600 text-[--tabs-color]'
+            !isChecked ? 'text-primary bg-defTabsColor' : 'bg-orange-600 text-defTabsColor'
           }`}
         >
         <Image 
@@ -35,7 +35,7 @@ export default function ToggleSwitch() {
         </span>
         <span
           className={`flex items-center space-x-[6px] rounded py-1 px-1 text-sm font-medium gap-1 ${
-            isChecked ? 'text-primary bg-[--background-color]' : 'bg-orange-600 text-[--tabs-color]'
+            isChecked ? 'text-primary bg-defTabsColor' : 'bg-orange-600 text-defTabsColor'
           }`}
         >
         <Image 

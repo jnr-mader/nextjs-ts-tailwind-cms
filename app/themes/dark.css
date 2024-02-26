@@ -1,0 +1,8 @@
+[data-theme="dark"] {
+    --def-font-color: #ccc;
+    --def-tabs-color: #FFE7D4;
+    --def-background-color: #333;
+    --def-logo-background-color: #EDAF94;
+    --grad-color-start: hsl(26deg 100% 30%);
+    --grad-color-end: hsl(20deg 20% 55%);
+}
