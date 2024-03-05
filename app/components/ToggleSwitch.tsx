@@ -1,16 +1,30 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image';
-import lightIcon from "@/public/images/light-icon.svg"; 
-import darkIcon from "@/public/images/dark-icon.svg"; 
+import lightIcon from "@/public/images/light-icon.svg";
+import darkIcon from "@/public/images/dark-icon.svg";
 
-export default function ToggleSwitch({isChecked, handleCheckboxChange}) {
-  // const [isChecked, setIsChecked] = useState(false)
+export default function ToggleSwitch() {
+  const [darkMode, setDarkMode] = useState(false)
+  useEffect(()=>{
+    const theme = localStorage.getItem('theme')
+    if(theme === 'dark') setDarkMode(true)
+  }, [])
 
-  // const handleCheckboxChange = () => {
-  //   setIsChecked(!isChecked)
-  // }
+  useEffect(()=>{
+    if(darkMode){
+      document.documentElement.dataset.theme = 'dark'
+      localStorage.setItem('theme', 'dark')
+    }else{
+      document.documentElement.dataset.theme = 'light'
+      localStorage.setItem('theme', 'light')
+    }
+  },[darkMode])
+  
+  const handleCheckboxChange = () => {
+    setDarkMode(!darkMode)
+  }
 
   return (
     <div className='flex sticky justify-end w-full top-[calc(100vh-3rem)]'>
@@ -18,31 +32,28 @@ export default function ToggleSwitch({isChecked, handleCheckboxChange}) {
         <input
           type='checkbox'
           className='sr-only'
-          checked={isChecked}
           onChange={handleCheckboxChange}
         />
         <span
-          className={`flex items-center space-x-[6px] rounded py-1 px-1 text-sm font-medium gap-1 ${
-            !isChecked ? 'text-primary bg-defTabsColor' : 'bg-orange-600 text-defTabsColor'
-          }`}
+          className={`flex items-center space-x-[6px] rounded py-1 px-1 text-sm font-medium gap-1 ${!darkMode ? 'text-primary bg-defTabsColor' : 'bg-orange-600 text-defTabsColor'
+            }`}
         >
-        <Image 
+          <Image
             src={lightIcon}
             alt="Jnr"
             priority
-        />          
+          />
           light
         </span>
         <span
-          className={`flex items-center space-x-[6px] rounded py-1 px-1 text-sm font-medium gap-1 ${
-            isChecked ? 'text-primary bg-defTabsColor' : 'bg-orange-600 text-defTabsColor'
-          }`}
+          className={`flex items-center space-x-[6px] rounded py-1 px-1 text-sm font-medium gap-1 ${darkMode ? 'text-primary bg-defTabsColor' : 'bg-orange-600 text-defTabsColor'
+            }`}
         >
-        <Image 
+          <Image
             src={darkIcon}
             alt="Jnr"
             priority
-        />              
+          />
           dark
         </span>
       </label>

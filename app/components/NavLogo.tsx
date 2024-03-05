@@ -13,7 +13,6 @@ export default function NavLogo() {
     const handleScroll = () => {
         const scrollPosition = window.scrollY; // => scroll position
         scrollPosition > 96 ? setScrollPosition("shrink") : setScrollPosition("");
-        console.log(scrollPosition);
     };
     
     useEffect(() => {

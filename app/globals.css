@@ -5,15 +5,6 @@
 @import "./themes/dark.css";
 @import "./themes/light.css";
 
-:root {
-  --def-font-color: #000;
-  --def-tabs-color: #FFE7D4;
-  --def-background-color: #EDAF94;
-  --def-logo-background-color: #EDAF94;
-  --grad-color-start: #FFE7D4;
-  --grad-color-end: #ea580c;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --def-font-color: #ccc;
